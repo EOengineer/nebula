@@ -24,6 +24,7 @@ exports.arraysAnswers = {
   },
 
   prepend : function(arr, item) {
+    // arr.unshift(item); <= jquery
     for (var i = arr.length; i--;) {
       i > 0 ? arr[i + 1] = arr[i] : arr[i] = item;
     }
@@ -31,15 +32,24 @@ exports.arraysAnswers = {
   },
 
   curtail : function(arr) {
-
+    arr.splice(0, 1);
+    return arr;
   },
 
   concat : function(arr1, arr2) {
-
+    // $.merge(arr1, arr2); <- jquery
+    for (i = 0; i < arr2.length; i++) {
+      arr1[i + arr2.length] = arr2[i];
+    }
+    return arr1;
   },
 
   insert : function(arr, item, index) {
 
+    for (i = arr.length; i >= index; i--) {
+      i > index ? arr[i] = arr[i - 1] : arr[index] = item;
+    }
+    return arr;
   },
 
   count : function(arr, item) {
