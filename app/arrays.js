@@ -53,15 +53,30 @@ exports.arraysAnswers = {
   },
 
   count : function(arr, item) {
-
+    var counter = 0;
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] === item) {counter++};
+    }
+    return counter;
   },
 
   duplicates : function(arr) {
-
+    var newArr = [];
+    for (i = 0; i < arr.length; i++) {
+      for (x = 1; x < arr.length; x++) {
+        if (arr[x] === arr[i]) {
+          arr.splice(x, 1);
+        }
+      }
+    }
+    return arr;
   },
 
   square : function(arr) {
-
+    for (i = 0; i < arr.length; i++) {
+      arr[i] = arr[i] * arr[i];
+    }
+    return arr;
   },
 
   findAllOccurrences : function(arr, target) {
