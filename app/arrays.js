@@ -80,6 +80,14 @@ exports.arraysAnswers = {
   },
 
   findAllOccurrences : function(arr, target) {
-
+    var counter = 0;
+    var answer = [];
+    for (var i = arr.length; i--;) {
+      if (arr[i] === target) {
+        answer[counter] = i;
+        counter++;
+      }
+    }
+    return answer;
   }
 };
